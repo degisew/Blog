@@ -1,12 +1,8 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
-<%@posts.each do |post|%>
-<div class='card'>
-    <h3><%=post.title%></h3>
-    <p><%=post.text%></p>
-    <div class='like-comment'>
-    <div>Comments: <%=post.comments_counter || 0%></div>
-    <div>Likes: <%=post.likes_counter || 0%></div>
-  </div>
-  </div>
-<%end%>
+<%=render partial:'shared/user', locals: {user: @current_user}%>
+<%=render partial: 'shared/post', collection: @posts%>
+<hr>
+<%@posts.each do |comment|%>
+<h4>Users comment on this post</h4>
+<%=render partial: 'shared/comment', collection: comment.recent_comments%>
+<%end%><br><br>
+<%= button_to 'Pagination', users_path, class: 'btn-all-post button' %>

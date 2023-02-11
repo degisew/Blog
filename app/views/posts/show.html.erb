@@ -1,3 +1,5 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
-<%=@post.title%>
+<%=render partial: 'shared/post', locals:{post: @post}%>
+<h4>Users comment on this post</h4>
+<%=render partial: 'shared/comment', collection: @post.recent_comments%>
+
+
