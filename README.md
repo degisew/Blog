@@ -132,7 +132,7 @@ To get a local copy up and running follow these simple example steps.
   gem install
 ``` 
 
-4. Navigate to the folder called Blog-App/ and open this project using your editor
+4. Navigate to the folder called Blog/ and open this project using your editor
 ### Usage
 
 To run the project, execute the following command:
