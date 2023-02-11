@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-  get 'posts/show'
+  get 'likes/create'
   # Defines the root path route ("/")
   root 'users#index'
   resources :users do
-    resources :posts
+      resources :posts, only: [:index, :show, :new, :create] do
+      resources :comments, only: [:create, :new]
+      resources :likes, only: [:create]
+    end
   end
 end

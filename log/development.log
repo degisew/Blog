@@ -6141,3 +6141,1189 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 137ms (Views: 92.6ms | ActiveRecord: 5.7ms | Allocations: 6494)
 
 
+Started GET "/" for 127.0.0.1 at 2023-02-11 18:06:23 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (16.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [7 times] (Duration: 5.7ms | Allocations: 693)
+  Rendered users/index.html.erb within layouts/application (Duration: 124.2ms | Allocations: 6915)
+  Rendered layout layouts/application.html.erb (Duration: 1434.1ms | Allocations: 45079)
+Completed 200 OK in 1709ms (Views: 1450.1ms | ActiveRecord: 44.3ms | Allocations: 50824)
+
+
+Started GET "/posts/37" for 127.0.0.1 at 2023-02-11 18:06:40 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/posts/37"):
+  
+Started GET "/posts/" for 127.0.0.1 at 2023-02-11 18:06:41 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/users/6/posts/" for 127.0.0.1 at 2023-02-11 18:07:00 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 2.9ms | Allocations: 222)
+  [1m[36mPost Load (10.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 6]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [3 times] (Duration: 4.4ms | Allocations: 234)
+  [1m[36mComment Load (12.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.2ms | Allocations: 25)
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.1ms | Allocations: 14)
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.2ms | Allocations: 14)
+  Rendered posts/index.html.erb within layouts/application (Duration: 264.7ms | Allocations: 12004)
+  Rendered layout layouts/application.html.erb (Duration: 371.7ms | Allocations: 14476)
+Completed 200 OK in 561ms (Views: 367.4ms | ActiveRecord: 44.4ms | Allocations: 19928)
+
+
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:07:07 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 45.9ms | Allocations: 4813)
+  Rendered layout layouts/application.html.erb (Duration: 49.4ms | Allocations: 4892)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 1.6ms | Allocations: 6054)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<ActionView::Base:0x0000000000c6c0>
+
+            @virtual_path = "posts/new";;@output_buffer.safe_append='<div>'.freeze;@output_buffer.append=(current_user.inspect);@output_buffer.safe_append='</div>
+                                                                                                          ^^^^^^^^^^^^
+Did you mean?  @current_user):
+    1: <div><%=current_user.inspect%></div>
+    2: <div><%=@new_post%></div>
+    3: <div></div>
+  
+app/views/posts/new.html.erb:1
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:07:32 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 59.9ms | Allocations: 3252)
+Completed 200 OK in 173ms (Views: 114.3ms | ActiveRecord: 1.6ms | Allocations: 4715)
+
+
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:08:13 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.0ms | Allocations: 3273)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<PostsController:0x000000000116e8>
+
+    current_user  
+    ^^^^^^^^^^^^):
+  
+app/controllers/posts_controller.rb:7:in `new'
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:09:12 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 222.7ms | Allocations: 14711)
+Completed 200 OK in 390ms (Views: 230.9ms | ActiveRecord: 27.4ms | Allocations: 23199)
+
+
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:09:33 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 54.6ms | Allocations: 4707)
+  Rendered layout layouts/application.html.erb (Duration: 58.5ms | Allocations: 4793)
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 1.6ms | Allocations: 6369)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<ActionView::Base:0x000000000167d8>
+
+            @virtual_path = "posts/new";;@output_buffer.safe_append='<div>'.freeze;@output_buffer.append=(current_user.inspect);@output_buffer.safe_append='</div>
+                                                                                                          ^^^^^^^^^^^^
+Did you mean?  current_cycle):
+    1: <div><%=current_user.inspect%></div>
+    2: <div><%=@new_post%></div>
+    3: <div></div>
+  
+app/views/posts/new.html.erb:1
+Started GET "/users/" for 127.0.0.1 at 2023-02-11 18:10:09 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [7 times] (Duration: 4.0ms | Allocations: 575)
+  Rendered users/index.html.erb within layouts/application (Duration: 26.3ms | Allocations: 1787)
+  Rendered layout layouts/application.html.erb (Duration: 111.6ms | Allocations: 4704)
+Completed 200 OK in 188ms (Views: 148.5ms | ActiveRecord: 3.1ms | Allocations: 5465)
+
+
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:15:27 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 32.1ms | Allocations: 4543)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 4629)
+Completed 500 Internal Server Error in 560ms (ActiveRecord: 41.7ms | Allocations: 11675)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<ActionView::Base:0x0000000001b8f0>
+
+            @virtual_path = "posts/new";;@output_buffer.safe_append='<div>'.freeze;@output_buffer.append=(current_user.inspect);@output_buffer.safe_append='</div>
+                                                                                                          ^^^^^^^^^^^^
+Did you mean?  current_cycle):
+    1: <div><%=current_user.inspect%></div>
+    2: <div><%=@new_post%></div>
+    3: <div></div>
+  
+app/views/posts/new.html.erb:1
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:16:14 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 238.1ms | Allocations: 15019)
+Completed 200 OK in 399ms (Views: 274.3ms | ActiveRecord: 56.1ms | Allocations: 19760)
+
+
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:16:35 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 214.8ms | Allocations: 14720)
+Completed 200 OK in 377ms (Views: 224.7ms | ActiveRecord: 36.4ms | Allocations: 23301)
+
+
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:18:09 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 224.0ms | Allocations: 14743)
+Completed 200 OK in 329ms (Views: 229.3ms | ActiveRecord: 14.1ms | Allocations: 19088)
+
+
+Started GET "/users/6/posts/new" for 127.0.0.1 at 2023-02-11 18:18:50 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 238.6ms | Allocations: 14836)
+Completed 200 OK in 386ms (Views: 244.5ms | ActiveRecord: 24.9ms | Allocations: 23335)
+
+
+Started GET "/users/7/posts/new" for 127.0.0.1 at 2023-02-11 18:19:14 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 78)
+  Rendered layout layouts/application.html.erb (Duration: 67.0ms | Allocations: 2525)
+Completed 200 OK in 105ms (Views: 70.9ms | ActiveRecord: 2.0ms | Allocations: 3574)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:19:25 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 78)
+  Rendered layout layouts/application.html.erb (Duration: 67.6ms | Allocations: 2528)
+Completed 200 OK in 102ms (Views: 71.6ms | ActiveRecord: 1.9ms | Allocations: 3451)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:20:59 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 279)
+  Rendered layout layouts/application.html.erb (Duration: 80.1ms | Allocations: 3193)
+Completed 200 OK in 185ms (Views: 134.4ms | ActiveRecord: 1.7ms | Allocations: 4667)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:33:57 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1195)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 1282)
+Completed 500 Internal Server Error in 365ms (ActiveRecord: 46.8ms | Allocations: 5972)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div><%=forw_with model: @new_post do |form| %></div>
+<div class="post-title">
+<%=form.label :title%>
+<%=form.text_field :title%>
+</div>
+<div class="post-content>
+<%=form.label :text%>
+<%=form.text_area :text%>
+</div>
+<div></div>
+):
+1:    <div><%=forw_with model: @new_post do |form| %></div>
+2:    <div class="post-title">
+3:    <%=form.label :title%>
+4:    <%=form.text_field :title%>
+5:    </div>
+6:    <div class="post-content>
+7:    <%=form.label :text%>
+8:    <%=form.text_area :text%>
+9:    </div>
+10:    <div></div>
+  
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:34:20 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1182)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 1269)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 1.8ms | Allocations: 2814)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div><%=form_with model: @new_post do |form| %></div>
+<div class="post-title">
+<%=form.label :title%>
+<%=form.text_field :title%>
+</div>
+<div class="post-content>
+<%=form.label :text%>
+<%=form.text_area :text%>
+</div>
+<div></div>
+):
+1:    <div><%=form_with model: @new_post do |form| %></div>
+2:    <div class="post-title">
+3:    <%=form.label :title%>
+4:    <%=form.text_field :title%>
+5:    </div>
+6:    <div class="post-content>
+7:    <%=form.label :text%>
+8:    <%=form.text_area :text%>
+9:    </div>
+10:    <div></div>
+  
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/posts/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:36:21 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 35.5ms | Allocations: 5180)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 5266)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 1.8ms | Allocations: 6817)
+
+
+  
+ActionView::Template::Error (undefined method `posts_path' for #<ActionView::Base:0x0000000002fc38>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  posts_index_path):
+    1: <div><%=form_with model: @new_post do |form| %>
+    2: <div class='post-title'>
+    3: <%=form.label :title%>
+    4: <%=form.text_field :title%>
+  
+app/views/posts/new.html.erb:1
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:38:25 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1214)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 1301)
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 1.9ms | Allocations: 2846)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div><%=form_with model: @new_post url: user_posts_path  do |form| %>
+<div class='post-title'>
+<%=form.label :title%>
+<%=form.text_field :title%>
+</div>
+<div class='post-content'>
+<%=form.label :text%>
+<%=form.text_area :text%>
+</div>
+<%end%>
+</div>
+):
+1:    <div><%=form_with model: @new_post url: user_posts_path  do |form| %>
+2:    <div class='post-title'>
+3:    <%=form.label :title%>
+4:    <%=form.text_field :title%>
+5:    </div>
+6:    <div class='post-content'>
+7:    <%=form.label :text%>
+8:    <%=form.text_area :text%>
+9:    </div>
+10:    <%end%>
+11:    </div>
+  
+app/views/posts/new.html.erb:1: syntax error, unexpected local variable or method, expecting `end'
+app/views/posts/new.html.erb:1: syntax error, unexpected local variable or method, expecting `end'
+app/views/posts/new.html.erb:1: syntax error, unexpected local variable or method, expecting `end'
+app/views/posts/new.html.erb:1: syntax error, unexpected local variable or method, expecting `end'
+app/views/posts/new.html.erb:1: syntax error, unexpected local variable or method, expecting `end'
+app/views/posts/new.html.erb:1: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:38:55 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 958.4ms | Allocations: 9734)
+  Rendered layout layouts/application.html.erb (Duration: 1012.4ms | Allocations: 12458)
+Completed 200 OK in 1157ms (Views: 1109.1ms | ActiveRecord: 1.6ms | Allocations: 14031)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:40:35 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 59.0ms | Allocations: 3128)
+Completed 200 OK in 95ms (Views: 62.7ms | ActiveRecord: 2.1ms | Allocations: 4197)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:44:29 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 577.2ms | Allocations: 10654)
+  Rendered layout layouts/application.html.erb (Duration: 582.6ms | Allocations: 10749)
+Completed 500 Internal Server Error in 676ms (ActiveRecord: 1.7ms | Allocations: 12195)
+
+
+  
+ActionView::Template::Error (undefined method `posts_path' for #<ActionView::Base:0x000000000304a8>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  posts_index_path):
+    1: <div><%=form_with model: [@user, @new_post] do |form| %>
+    2: <div class='post-title'>
+    3: <%=form.label :title%>
+    4: <%=form.text_field :title%>
+  
+app/views/posts/new.html.erb:1
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 18:44:51 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1212)
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 3900)
+Completed 200 OK in 143ms (Views: 107.8ms | ActiveRecord: 1.5ms | Allocations: 5476)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 19:10:37 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1209)
+  Rendered layout layouts/application.html.erb (Duration: 70.0ms | Allocations: 3882)
+Completed 200 OK in 550ms (Views: 116.1ms | ActiveRecord: 49.5ms | Allocations: 8594)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 19:11:09 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1214)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 1301)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 1.7ms | Allocations: 2852)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div><%=form_with model: @new_post, url: user_posts_path  do |form| %>
+<div class='post-title'>
+<%=form.label :title:%>
+<%=form.text_field :title%>
+</div><br>
+<div class='post-content'>
+<%=form.label :text%>
+<%=form.text_area :text%>
+</div>
+<%end%>
+</div>
+):
+1:    <div><%=form_with model: @new_post, url: user_posts_path  do |form| %>
+2:    <div class='post-title'>
+3:    <%=form.label :title:%>
+4:    <%=form.text_field :title%>
+5:    </div><br>
+6:    <div class='post-content'>
+7:    <%=form.label :text%>
+8:    <%=form.text_area :text%>
+9:    </div>
+10:    <%end%>
+11:    </div>
+  
+app/views/posts/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+app/views/posts/new.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:13: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+app/views/posts/new.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:13: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+app/views/posts/new.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:13: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+app/views/posts/new.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:13: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+app/views/posts/new.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:13: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+app/views/posts/new.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/posts/new.html.erb:13: syntax error, unexpected `end', expecting ')'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 19:11:32 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1267)
+  Rendered layout layouts/application.html.erb (Duration: 69.1ms | Allocations: 3955)
+Completed 200 OK in 152ms (Views: 106.4ms | ActiveRecord: 1.7ms | Allocations: 5528)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 19:11:47 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1214)
+  Rendered layout layouts/application.html.erb (Duration: 66.2ms | Allocations: 3887)
+Completed 200 OK in 146ms (Views: 107.1ms | ActiveRecord: 1.8ms | Allocations: 5466)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 19:13:40 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1304)
+  Rendered layout layouts/application.html.erb (Duration: 65.9ms | Allocations: 3975)
+Completed 200 OK in 162ms (Views: 114.7ms | ActiveRecord: 1.9ms | Allocations: 5554)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 19:13:54 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 66.3ms | Allocations: 3958)
+Completed 200 OK in 167ms (Views: 120.2ms | ActiveRecord: 1.8ms | Allocations: 5537)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 19:13:57 +0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for PostsController):
+  
+actionpack (7.0.4.2) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.2) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 19:13:58 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 971)
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | Allocations: 3378)
+Completed 200 OK in 88ms (Views: 55.5ms | ActiveRecord: 1.7ms | Allocations: 4454)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 19:37:39 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1355)
+  Rendered layout layouts/application.html.erb (Duration: 307.2ms | Allocations: 15974)
+Completed 200 OK in 913ms (Views: 374.2ms | ActiveRecord: 47.7ms | Allocations: 23366)
+
+
+Started GET "/users/1/posts/comments" for 127.0.0.1 at 2023-02-11 19:38:27 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"comments"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11:in `show'
+  [1m[36mPost Load (6.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["author_id", 1], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+Completed 404 Not Found in 1045ms (ActiveRecord: 13.5ms | Allocations: 10115)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=comments [WHERE "posts"."author_id" = $1]):
+  
+app/controllers/posts_controller.rb:13:in `show'
+Started GET "/users/1/posts/comments/new" for 127.0.0.1 at 2023-02-11 19:38:40 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/posts/comments/new"):
+  
+Started GET "/users/1/posts/comments/new" for 127.0.0.1 at 2023-02-11 19:43:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/posts/comments/new"):
+  
+Started GET "/users/1/posts/1/comments/new" for 127.0.0.1 at 2023-02-11 19:45:22 +0300
+Processing by CommentsController#new as HTML
+  Parameters: {"user_id"=>"1", "post_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1323)
+  Rendered layout layouts/application.html.erb (Duration: 286.0ms | Allocations: 15755)
+Completed 200 OK in 479ms (Views: 328.8ms | ActiveRecord: 58.3ms | Allocations: 20048)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:00:02 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 310.5ms | Allocations: 15527)
+Completed 200 OK in 791ms (Views: 318.3ms | ActiveRecord: 92.2ms | Allocations: 22982)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:01:15 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"Flutter is a mobile app framework that used to build native mobile apps in a singe code base."}, "commit"=>"Post", "user_id"=>"1"}
+Completed 400 Bad Request in 44ms (ActiveRecord: 0.0ms | Allocations: 807)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: posts
+Did you mean?  post):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:01:17 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 840)
+  Rendered layout layouts/application.html.erb (Duration: 98.3ms | Allocations: 3141)
+Completed 200 OK in 137ms (Views: 103.9ms | ActiveRecord: 0.0ms | Allocations: 3455)
+
+
+Started GET "/users/1/posts/" for 127.0.0.1 at 2023-02-11 20:01:29 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 3.1ms | Allocations: 225)
+  [1m[36mPost Load (8.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 23)
+  Rendered posts/index.html.erb within layouts/application (Duration: 61.5ms | Allocations: 1847)
+  Rendered layout layouts/application.html.erb (Duration: 132.2ms | Allocations: 4231)
+Completed 200 OK in 1209ms (Views: 130.4ms | ActiveRecord: 26.3ms | Allocations: 13983)
+
+
+Started GET "/users/6/posts/" for 127.0.0.1 at 2023-02-11 20:01:50 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.6ms | Allocations: 60)
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 6]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [3 times] (Duration: 2.8ms | Allocations: 216)
+  [1m[36mComment Load (8.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.2ms | Allocations: 22)
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.1ms | Allocations: 14)
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.3ms | Allocations: 14)
+  Rendered posts/index.html.erb within layouts/application (Duration: 110.0ms | Allocations: 6401)
+  Rendered layout layouts/application.html.erb (Duration: 177.0ms | Allocations: 8789)
+Completed 200 OK in 223ms (Views: 167.3ms | ActiveRecord: 15.2ms | Allocations: 9667)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:02:50 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 302.9ms | Allocations: 15521)
+Completed 200 OK in 423ms (Views: 309.6ms | ActiveRecord: 26.4ms | Allocations: 19920)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:03:29 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"Flutter is a mobile app framework."}, "commit"=>"Post", "user_id"=>"1"}
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.0ms | Allocations: 3630)
+
+
+  
+NameError (undefined local variable or method `post_params' for #<PostsController:0x000000000454e8>
+
+   @post = Post.new(post_params)
+                    ^^^^^^^^^^^
+Did you mean?  to_param):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:06:32 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 293.9ms | Allocations: 15521)
+Completed 200 OK in 415ms (Views: 300.0ms | ActiveRecord: 14.5ms | Allocations: 19916)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:07:48 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"Flutter is a mobile app framework."}, "commit"=>"Post", "user_id"=>"1"}
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 14.8ms | Allocations: 4536)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:09:39 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1127)
+  Rendered layout layouts/application.html.erb (Duration: 314.9ms | Allocations: 15559)
+Completed 200 OK in 445ms (Views: 321.8ms | ActiveRecord: 17.0ms | Allocations: 19954)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:10:23 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"Flutter is a mobile app dev framework"}, "commit"=>"Post", "user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 2213)
+  Rendered layout layouts/application.html.erb (Duration: 88.5ms | Allocations: 4611)
+Completed 200 OK in 193ms (Views: 95.0ms | ActiveRecord: 0.0ms | Allocations: 7921)
+
+
+Started GET "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:10:47 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 2.3ms | Allocations: 83)
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 23)
+  Rendered posts/index.html.erb within layouts/application (Duration: 36.8ms | Allocations: 1337)
+  Rendered layout layouts/application.html.erb (Duration: 167.2ms | Allocations: 3614)
+Completed 200 OK in 283ms (Views: 182.3ms | ActiveRecord: 16.8ms | Allocations: 7337)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:10:56 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 853)
+  Rendered layout layouts/application.html.erb (Duration: 77.7ms | Allocations: 3138)
+Completed 200 OK in 114ms (Views: 81.4ms | ActiveRecord: 0.0ms | Allocations: 3434)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:11:10 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"flutter mob app framework."}, "commit"=>"Post", "user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2111)
+  Rendered layout layouts/application.html.erb (Duration: 88.2ms | Allocations: 4388)
+Completed 200 OK in 143ms (Views: 93.8ms | ActiveRecord: 0.0ms | Allocations: 5395)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:12:09 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"flutter mob app framework."}, "commit"=>"Post", "user_id"=>"1"}
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 0.0ms | Allocations: 5098)
+
+
+  
+NameError (undefined local variable or method `new_post_params' for #<PostsController:0x00000000058de0>
+
+   @post = Post.new(new_post_params)
+                    ^^^^^^^^^^^^^^^
+Did you mean?  new_user_post_path):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:15:10 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 16.7ms | Allocations: 1121)
+  Rendered layout layouts/application.html.erb (Duration: 314.6ms | Allocations: 15551)
+Completed 200 OK in 423ms (Views: 323.0ms | ActiveRecord: 15.2ms | Allocations: 19948)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:15:44 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"", "text"=>"Flutter mobile app framework"}, "commit"=>"Post", "user_id"=>"1"}
+Completed 400 Bad Request in 42ms (ActiveRecord: 0.0ms | Allocations: 758)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_post):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:15:46 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 846)
+  Rendered layout layouts/application.html.erb (Duration: 82.2ms | Allocations: 3146)
+Completed 200 OK in 119ms (Views: 87.5ms | ActiveRecord: 0.0ms | Allocations: 3460)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:16:07 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"is a mobile application framework"}, "commit"=>"Post", "user_id"=>"1"}
+Completed 400 Bad Request in 44ms (ActiveRecord: 0.0ms | Allocations: 708)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_post):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:16:09 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 846)
+  Rendered layout layouts/application.html.erb (Duration: 78.2ms | Allocations: 3146)
+Completed 200 OK in 119ms (Views: 82.8ms | ActiveRecord: 0.0ms | Allocations: 3438)
+
+
+Started GET "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:16:15 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.9ms | Allocations: 100)
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 23)
+  Rendered posts/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 1391)
+  Rendered layout layouts/application.html.erb (Duration: 102.4ms | Allocations: 3775)
+Completed 200 OK in 1342ms (Views: 106.8ms | ActiveRecord: 14.3ms | Allocations: 13385)
+
+
+Started GET "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:16:30 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.5ms | Allocations: 60)
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.1ms | Allocations: 14)
+  Rendered posts/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1176)
+  Rendered layout layouts/application.html.erb (Duration: 95.2ms | Allocations: 3453)
+Completed 200 OK in 153ms (Views: 102.6ms | ActiveRecord: 4.2ms | Allocations: 4312)
+
+
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:16:38 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 883)
+  Rendered layout layouts/application.html.erb (Duration: 75.1ms | Allocations: 3168)
+Completed 200 OK in 116ms (Views: 81.7ms | ActiveRecord: 0.0ms | Allocations: 3464)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:18:01 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"Flutter mobile application framework"}, "commit"=>"Post", "user_id"=>"1"}
+Completed 400 Bad Request in 35ms (ActiveRecord: 0.0ms | Allocations: 732)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_post):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:18:04 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 71.0ms | Allocations: 3143)
+Completed 200 OK in 112ms (Views: 77.2ms | ActiveRecord: 0.0ms | Allocations: 3435)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:20:06 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"Hello flutter"}, "commit"=>"Post", "user_id"=>"1"}
+Completed 400 Bad Request in 112ms (ActiveRecord: 0.0ms | Allocations: 2138)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_post):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:20:28 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 12.0ms | Allocations: 1078)
+  Rendered layout layouts/application.html.erb (Duration: 316.6ms | Allocations: 15507)
+Completed 200 OK in 398ms (Views: 323.2ms | ActiveRecord: 15.0ms | Allocations: 18495)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:28:04 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"Flutter mobile app development"}, "commit"=>"Post", "user_id"=>"1"}
+Completed 500 Internal Server Error in 59ms (Allocations: 1553)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+    title = params[:new_post][:title]
+                             ^^^^^^^^):
+  
+app/controllers/posts_controller.rb:17:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:29:35 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1106)
+  Rendered layout layouts/application.html.erb (Duration: 315.7ms | Allocations: 15536)
+Completed 200 OK in 737ms (Views: 321.9ms | ActiveRecord: 48.4ms | Allocations: 22613)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:30:12 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"Flutter is a mobile framework"}, "commit"=>"Post", "user_id"=>"1"}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 53.1ms | Allocations: 5551)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'comment_counter' for Post.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/posts_controller.rb:19:in `create'
+Started GET "/users/1/posts/new" for 127.0.0.1 at 2023-02-11 20:30:37 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 1103)
+  Rendered layout layouts/application.html.erb (Duration: 331.0ms | Allocations: 15544)
+Completed 200 OK in 454ms (Views: 337.2ms | ActiveRecord: 27.9ms | Allocations: 19939)
+
+
+Started POST "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:31:14 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Intro to Flutter", "text"=>"Flutter is a mobile app dev framework"}, "commit"=>"Post", "user_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mPost Create (25.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Intro to Flutter"], ["text", "Flutter is a mobile app dev framework"], ["comments_counter", 0], ["likes_counter", 0], ["created_at", "2023-02-11 17:31:14.702183"], ["updated_at", "2023-02-11 17:31:14.702183"], ["author_id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/users/1/posts
+Completed 302 Found in 187ms (ActiveRecord: 44.7ms | Allocations: 8136)
+
+
+Started GET "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:31:14 +0300
+Processing by PostsController#index as TURBO_STREAM
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.7ms | Allocations: 96)
+  [1m[36mPost Load (3.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 1.0ms | Allocations: 43)
+  [1m[36mComment Load (10.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 5], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.3ms | Allocations: 22)
+  Rendered posts/index.html.erb within layouts/application (Duration: 111.2ms | Allocations: 4669)
+  Rendered layout layouts/application.html.erb (Duration: 220.3ms | Allocations: 7065)
+Completed 200 OK in 290ms (Views: 206.3ms | ActiveRecord: 23.5ms | Allocations: 8647)
+
+
+Started GET "/users/1/posts/1/comments/new" for 127.0.0.1 at 2023-02-11 20:36:45 +0300
+Processing by CommentsController#new as HTML
+  Parameters: {"user_id"=>"1", "post_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 900)
+  Rendered layout layouts/application.html.erb (Duration: 293.8ms | Allocations: 15490)
+Completed 200 OK in 805ms (Views: 355.4ms | ActiveRecord: 67.9ms | Allocations: 22032)
+
+
+Started POST "/users/1/posts/1/comments" for 127.0.0.1 at 2023-02-11 20:42:30 +0300
+  
+SyntaxError (C:/Users/user/Desktop/Microverse/Blog/app/controllers/comments_controller.rb:10: syntax error, unexpected ')', expecting =>
+...xt, author: current_user, post)
+...                              ^
+):
+  
+app/controllers/comments_controller.rb:10: syntax error, unexpected ')', expecting =>
+app/controllers/comments_controller.rb:10: syntax error, unexpected ')', expecting =>
+app/controllers/comments_controller.rb:10: syntax error, unexpected ')', expecting =>
+Started GET "/users/1/posts/1/comments/new" for 127.0.0.1 at 2023-02-11 20:47:00 +0300
+Processing by CommentsController#new as HTML
+  Parameters: {"user_id"=>"1", "post_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 706)
+  Rendered layout layouts/application.html.erb (Duration: 335.1ms | Allocations: 15137)
+Completed 200 OK in 795ms (Views: 343.8ms | ActiveRecord: 47.3ms | Allocations: 21395)
+
+
+Started POST "/users/1/posts/1/comments" for 127.0.0.1 at 2023-02-11 20:47:36 +0300
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"text"=>"Hi @Dagi, Your post is really life saver. Thank you."}, "commit"=>"add comment", "user_id"=>"1", "post_id"=>"1"}
+  [1m[36mPost Load (8.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:11:in `create'
+  [1m[36mComment Create (16.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at", "author_id", "post_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Hi @Dagi, Your post is really life saver. Thank you."], ["created_at", "2023-02-11 17:47:38.875200"], ["updated_at", "2023-02-11 17:47:38.875200"], ["author_id", 1], ["post_id", 1]]
+  ↳ app/controllers/comments_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 1447ms (ActiveRecord: 36.1ms | Allocations: 16840)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :post_id=>"1", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  user_post_path):
+  
+app/controllers/comments_controller.rb:13:in `create'
+Started GET "/users/1/posts/1/comments/new" for 127.0.0.1 at 2023-02-11 20:48:46 +0300
+Processing by CommentsController#new as HTML
+  Parameters: {"user_id"=>"1", "post_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 703)
+  Rendered layout layouts/application.html.erb (Duration: 297.9ms | Allocations: 15133)
+Completed 200 OK in 443ms (Views: 303.9ms | ActiveRecord: 58.5ms | Allocations: 18715)
+
+
+Started POST "/users/1/posts/1/comments" for 127.0.0.1 at 2023-02-11 20:49:09 +0300
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"text"=>"Hi @Dagi, Your post is really life saver. Thank you."}, "commit"=>"add comment", "user_id"=>"1", "post_id"=>"1"}
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:11:in `create'
+  [1m[36mComment Create (3.0ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at", "author_id", "post_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Hi @Dagi, Your post is really life saver. Thank you."], ["created_at", "2023-02-11 17:49:10.735429"], ["updated_at", "2023-02-11 17:49:10.735429"], ["author_id", 1], ["post_id", 1]]
+  ↳ app/controllers/comments_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 261ms (ActiveRecord: 41.1ms | Allocations: 12807)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :post_id=>"1", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  user_post_url):
+  
+app/controllers/comments_controller.rb:13:in `create'
+Started GET "/users/1/posts" for 127.0.0.1 at 2023-02-11 20:49:40 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 4.3ms | Allocations: 229)
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 3.2ms | Allocations: 196)
+  [1m[36mComment Load (4.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 5], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.2ms | Allocations: 22)
+  Rendered posts/index.html.erb within layouts/application (Duration: 187.4ms | Allocations: 7115)
+  Rendered layout layouts/application.html.erb (Duration: 476.0ms | Allocations: 21524)
+Completed 200 OK in 684ms (Views: 503.1ms | ActiveRecord: 38.3ms | Allocations: 28991)
+
+
+Started GET "/users/1/posts/1/comments" for 127.0.0.1 at 2023-02-11 20:51:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/posts/1/comments"):
+  
