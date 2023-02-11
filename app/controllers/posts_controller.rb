@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    # current_user
     @new_post = Post.new
   end
 
@@ -16,7 +15,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    # @post = Post.new(params.require(:new_post).permit(:title, :text))
     title = params[:post][:title]
     text = params[:post][:text]
     @post = Post.new(title:, text:, comments_counter: 0, likes_counter: 0, author: current_user)

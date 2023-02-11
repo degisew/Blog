@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def new
-    # current_user
     @comment = Comment.new
   end
 
