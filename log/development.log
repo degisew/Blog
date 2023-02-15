@@ -7327,3 +7327,286 @@ Started GET "/users/1/posts/1/comments" for 127.0.0.1 at 2023-02-11 20:51:26 +03
   
 ActionController::RoutingError (No route matches [GET] "/users/1/posts/1/comments"):
   
+Started GET "/" for 127.0.0.1 at 2023-02-14 23:41:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [9 times] (Duration: 7.9ms | Allocations: 800)
+  Rendered users/index.html.erb within layouts/application (Duration: 162.4ms | Allocations: 7081)
+  Rendered layout layouts/application.html.erb (Duration: 3687.7ms | Allocations: 91374)
+Completed 500 Internal Server Error in 3979ms (ActiveRecord: 38.3ms | Allocations: 97018)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/user/Desktop/Microverse/Blog/tmp/cache/assets/sprockets/v4.0.0/8C/8C0a3b-vrVP7zuYGEPQrNiQ91zyV5tzIYgrRc_e6mp4.cache.24040.12084.876944, C:/Users/user/Desktop/Microverse/Blog/tmp/cache/assets/sprockets/v4.0.0/8C/8C0a3b-vrVP7zuYGEPQrNiQ91zyV5tzIYgrRc_e6mp4.cache)):
+  
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.0) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.0) lib/sprockets/loader.rb:341:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/map.rb:204:in `block in fetch_or_store'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/map.rb:184:in `fetch'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/map.rb:203:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.0) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/map.rb:204:in `block in fetch_or_store'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/map.rb:184:in `fetch'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/map.rb:203:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/bundle.rb:32:in `block in call'
+C:/Ruby31-x64/lib/ruby/3.1.0/set.rb:511:in `each_key'
+C:/Ruby31-x64/lib/ruby/3.1.0/set.rb:511:in `each'
+sprockets (4.2.0) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.0) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/map.rb:204:in `block in fetch_or_store'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/map.rb:184:in `fetch'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/map.rb:203:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.0) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.0) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2023-02-14 23:43:33 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [9 times] (Duration: 4.4ms | Allocations: 555)
+  Rendered users/index.html.erb within layouts/application (Duration: 86.9ms | Allocations: 3731)
+  Rendered layout layouts/application.html.erb (Duration: 788.5ms | Allocations: 37550)
+Completed 200 OK in 890ms (Views: 799.6ms | ActiveRecord: 33.0ms | Allocations: 39786)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-15 00:04:25 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [17 times] (Duration: 3.8ms | Allocations: 929)
+  Rendered users/index.html.erb within layouts/application (Duration: 403.5ms | Allocations: 5251)
+  Rendered layout layouts/application.html.erb (Duration: 470.4ms | Allocations: 7720)
+Completed 200 OK in 507ms (Views: 478.0ms | ActiveRecord: 47.4ms | Allocations: 8036)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-15 10:22:36 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [25 times] (Duration: 21.1ms | Allocations: 1648)
+  Rendered users/index.html.erb within layouts/application (Duration: 159.8ms | Allocations: 8412)
+  Rendered layout layouts/application.html.erb (Duration: 1225.1ms | Allocations: 45319)
+Completed 200 OK in 1515ms (Views: 1288.3ms | ActiveRecord: 33.3ms | Allocations: 51005)
+
+
+Started GET "/users/" for 127.0.0.1 at 2023-02-15 17:32:31 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (26.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [49 times] (Duration: 25.9ms | Allocations: 2814)
+  Rendered users/index.html.erb within layouts/application (Duration: 940.4ms | Allocations: 10175)
+  Rendered layout layouts/application.html.erb (Duration: 1343.8ms | Allocations: 25054)
+Completed 200 OK in 1674ms (Views: 1546.3ms | ActiveRecord: 167.9ms | Allocations: 27570)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-02-15 17:35:49 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 4.5ms | Allocations: 217)
+  [1m[36mPost Load (11.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 6], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [3 times] (Duration: 5.6ms | Allocations: 259)
+  Rendered users/show.html.erb within layouts/application (Duration: 357.3ms | Allocations: 9280)
+  Rendered layout layouts/application.html.erb (Duration: 427.6ms | Allocations: 11907)
+Completed 200 OK in 1579ms (Views: 324.5ms | ActiveRecord: 117.8ms | Allocations: 19534)
+
+
+Started GET "/users/6/posts" for 127.0.0.1 at 2023-02-15 17:36:16 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.7ms | Allocations: 97)
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 6]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [3 times] (Duration: 0.6ms | Allocations: 71)
+  [1m[36mComment Load (12.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_comment.html.erb:2
+  Rendered collection of shared/_comment.html.erb [2 times] (Duration: 41.1ms | Allocations: 3248)
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.3ms | Allocations: 19)
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.2ms | Allocations: 14)
+  Rendered posts/index.html.erb within layouts/application (Duration: 214.2ms | Allocations: 13221)
+  Rendered layout layouts/application.html.erb (Duration: 280.7ms | Allocations: 15692)
+Completed 200 OK in 367ms (Views: 291.6ms | ActiveRecord: 32.8ms | Allocations: 17188)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-02-15 17:36:50 +0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  
+actionpack (7.0.4.2) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+bullet (7.0.7) lib/bullet/rack.rb:14:in `call'
+rack (2.2.6.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.2) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/6/posts" for 127.0.0.1 at 2023-02-15 17:36:53 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.8ms | Allocations: 82)
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 6]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [3 times] (Duration: 1.3ms | Allocations: 66)
+  [1m[36mComment Load (1.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_comment.html.erb:2
+  Rendered collection of shared/_comment.html.erb [2 times] (Duration: 108.1ms | Allocations: 1405)
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.2ms | Allocations: 16)
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.1ms | Allocations: 14)
+  Rendered posts/index.html.erb within layouts/application (Duration: 198.0ms | Allocations: 5662)
+  Rendered layout layouts/application.html.erb (Duration: 266.0ms | Allocations: 8061)
+Completed 200 OK in 317ms (Views: 257.8ms | ActiveRecord: 16.6ms | Allocations: 9059)
+
+
+Started GET "/users/6/posts/1" for 127.0.0.1 at 2023-02-15 17:37:01 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"6", "id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["author_id", 6], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered shared/_post.html.erb (Duration: 4.4ms | Allocations: 166)
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_comment.html.erb:2
+  Rendered collection of shared/_comment.html.erb [2 times] (Duration: 22.1ms | Allocations: 1397)
+  Rendered posts/show.html.erb within layouts/application (Duration: 43.5ms | Allocations: 2718)
+  Rendered layout layouts/application.html.erb (Duration: 105.7ms | Allocations: 5152)
+Completed 200 OK in 176ms (Views: 106.3ms | ActiveRecord: 6.3ms | Allocations: 6753)
+
+

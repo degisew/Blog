@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'likes/create'
   # Defines the root path route ("/")
   root 'users#index'
   resources :users do

@@ -164,11 +164,23 @@ You can deploy this project using:
 ## 👥 Authors <a name="authors"></a>
 
 
-👤 **Author1**
+👤 **Degisew**
 
 - GitHub: [@degisew](https://github.com/degisew)
 - Twitter: [@Dj_etiya](https://twitter.com/DJ_etiya)
 - LinkedIn: [Degisew](https://linkedin.com/in/degisew-mengist)
+
+👤 **John Mutisya**
+
+  - GitHub: [@John Mutisya](https://github.com/johnkioko)
+  - Twitter: [@John Mutisya](https://twitter.com/John_Web_Dev)
+  - LinkedIn: [John Mutisya](https://linkedin.com/in/johnmutisya)
+  
+  👤 **JA MANU**
+
+  - GitHub: [@jaamanu](https://github.com/jaamanu)
+  - Twitter: [@JamesAsibeyManu](https://twitter.com/JamesAsibeyManu)
+  - LinkedIn: [jamesasibeymanyu](https://linkedin.com/in/jamesasibeymanu)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
