@@ -49,11 +49,11 @@ describe Post, type: :feature do
   it 'should have comment number' do
     visit("users/#{@second_user.id}/posts")
     expect(page).to have_content "Comments: #{@first_post.comments_counter}"
-end
+  end
 
-it 'should have number of likes' do
-  visit("users/#{@second_user.id}/posts")
+  it 'should have number of likes' do
+    visit("users/#{@second_user.id}/posts")
 
-  expect(page).to have_content "Likes: #{@first_post.likes_counter}"
-  end
+    expect(page).to have_content "Likes: #{@first_post.likes_counter}"
+  end
 end
