@@ -170,6 +170,12 @@ You can deploy this project using:
 - Twitter: [@Dj_etiya](https://twitter.com/DJ_etiya)
 - LinkedIn: [Degisew](https://linkedin.com/in/degisew-mengist)
 
+👤 **John Mutisya**
+
+  - GitHub: [@John Mutisya](https://github.com/johnkioko)
+  - Twitter: [@John Mutisya](https://twitter.com/John_Web_Dev)
+  - LinkedIn: [John Mutisya](https://linkedin.com/in/johnmutisya)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
