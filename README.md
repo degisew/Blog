@@ -175,6 +175,12 @@ You can deploy this project using:
   - GitHub: [@John Mutisya](https://github.com/johnkioko)
   - Twitter: [@John Mutisya](https://twitter.com/John_Web_Dev)
   - LinkedIn: [John Mutisya](https://linkedin.com/in/johnmutisya)
+  
+  👤 **JA MANU**
+
+  - GitHub: [@jaamanu](https://github.com/jaamanu)
+  - Twitter: [@JamesAsibeyManu](https://twitter.com/JamesAsibeyManu)
+  - LinkedIn: [jamesasibeymanyu](https://linkedin.com/in/jamesasibeymanu)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
