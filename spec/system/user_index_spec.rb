@@ -1,6 +1,4 @@
 require 'rails_helper'
-
-
 describe User, type: :system do
   before :all do
     @first_user = User.create(name: 'Dagi',
@@ -12,7 +10,6 @@ describe User, type: :system do
                                bio: 'Teacher from Woldia',
                                posts_counter: 1)
   end
-
   it 'Should have user name meshu name Dagi' do
     visit users_path
     expect(page).to have_text('Dagi')

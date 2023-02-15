@@ -164,7 +164,7 @@ You can deploy this project using:
 ## 👥 Authors <a name="authors"></a>
 
 
-👤 **Author1**
+👤 **Degisew**
 
 - GitHub: [@degisew](https://github.com/degisew)
 - Twitter: [@Dj_etiya](https://twitter.com/DJ_etiya)
