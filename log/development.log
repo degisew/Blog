@@ -7610,3 +7610,2348 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 176ms (Views: 106.3ms | ActiveRecord: 6.3ms | Allocations: 6753)
 
 
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7028984730489327060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20230215205232)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_token" character varying[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmed_at" timestamp(6)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_sent_at" timestamp(6)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "unconfirmed_email" character varying[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7028984730489327060)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7028984730489327060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20230215205232)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_token" character varying[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmed_at" timestamp(6)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_sent_at" timestamp(6)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "unconfirmed_email" character varying[0m
+  [1m[35m (22.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7028984730489327060)[0m
+Started GET "/" for 127.0.0.1 at 2023-02-16 11:00:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (20.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230215205232_add_devise_to_users.rb
+
+
+):
+  
+activerecord (7.0.4.2) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.2) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.2) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.2) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7028984730489327060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20230215205232)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.5ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_token" character varying[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmed_at" timestamp(6)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_sent_at" timestamp(6)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "unconfirmed_email" character varying[0m
+  [1m[35m (53.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7028984730489327060)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7028984730489327060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20230215205232)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.8ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_token" character varying[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmed_at" timestamp(6)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_sent_at" timestamp(6)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "unconfirmed_email" character varying[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230215205232"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7028984730489327060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-02-16 11:09:35 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [49 times] (Duration: 13.1ms | Allocations: 2896)
+  Rendered users/index.html.erb within layouts/application (Duration: 137.6ms | Allocations: 14836)
+  Rendered layout layouts/application.html.erb (Duration: 711.4ms | Allocations: 51687)
+Completed 200 OK in 809ms (Views: 689.7ms | ActiveRecord: 54.4ms | Allocations: 54093)
+
+
+Started GET "/users/" for 127.0.0.1 at 2023-02-16 11:10:27 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [49 times] (Duration: 16.4ms | Allocations: 2635)
+  Rendered users/index.html.erb within layouts/application (Duration: 32.5ms | Allocations: 5005)
+  Rendered layout layouts/application.html.erb (Duration: 83.5ms | Allocations: 7503)
+Completed 200 OK in 103ms (Views: 85.2ms | ActiveRecord: 2.0ms | Allocations: 7835)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-16 11:10:35 +0300
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for UsersController):
+  
+actionpack (7.0.4.2) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+bullet (7.0.7) lib/bullet/rack.rb:14:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.6.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.2) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 11:11:44 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.7ms | Allocations: 237)
+  Rendered devise/shared/_links.html.erb (Duration: 4.3ms | Allocations: 585)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 354.3ms | Allocations: 7633)
+  Rendered layout layouts/application.html.erb (Duration: 404.0ms | Allocations: 10134)
+Completed 200 OK in 492ms (Views: 472.8ms | ActiveRecord: 0.0ms | Allocations: 11620)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-02-16 11:13:21 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Haymanot", "bio"=>"A police officer", "email"=>"degisew.mengist21@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x0000026ff5ac3228 @tempfile=#<Tempfile:C:/Users/user/AppData/Local/Temp/RackMultipart20230216-12968-313vn6.jpg>, @original_filename="degisew photo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[photo]\"; filename=\"degisew photo.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :bio, :photo. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000026ff5902240>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Haymanot", "bio"=>"A police officer", "email"=>"degisew.mengist21@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x0000026ff5ac3228 @tempfile=#<Tempfile:C:/Users/user/AppData/Local/Temp/RackMultipart20230216-12968-313vn6.jpg>, @original_filename="degisew photo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[photo]\"; filename=\"degisew photo.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "degisew.mengist21@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.7ms | Allocations: 588)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 31.2ms | Allocations: 3136)
+  Rendered layout layouts/application.html.erb (Duration: 80.1ms | Allocations: 5530)
+Completed 200 OK in 864ms (Views: 84.7ms | ActiveRecord: 4.2ms | Allocations: 14828)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-16 11:13:28 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 231)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 1543)
+  Rendered layout layouts/application.html.erb (Duration: 66.6ms | Allocations: 4018)
+Completed 200 OK in 132ms (Views: 112.3ms | ActiveRecord: 0.0ms | Allocations: 5362)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-02-16 11:13:55 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"degisew.mengist21@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "degisew.mengist21@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 725ms (ActiveRecord: 3.1ms | Allocations: 7438)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-02-16 11:14:08 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"degisew.mengist21@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "degisew.mengist21@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 32ms (ActiveRecord: 1.8ms | Allocations: 1554)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2023-02-16 11:14:13 +0300
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 18)
+  Rendered devise/shared/_links.html.erb (Duration: 3.4ms | Allocations: 150)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 18.1ms | Allocations: 1294)
+  Rendered layout layouts/application.html.erb (Duration: 75.8ms | Allocations: 3783)
+Completed 200 OK in 140ms (Views: 115.0ms | ActiveRecord: 0.0ms | Allocations: 4997)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2023-02-16 11:14:21 +0300
+Processing by Devise::PasswordsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"degisew.mengist21@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "degisew.mengist21@gmail.com"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.6ms | Allocations: 525)
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 128)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 18.5ms | Allocations: 1867)
+  Rendered layout layouts/application.html.erb (Duration: 73.6ms | Allocations: 4163)
+Completed 200 OK in 158ms (Views: 77.9ms | ActiveRecord: 1.7ms | Allocations: 6821)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-16 11:14:40 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 948)
+  Rendered layout layouts/application.html.erb (Duration: 55.5ms | Allocations: 3229)
+Completed 200 OK in 83ms (Views: 59.2ms | ActiveRecord: 0.0ms | Allocations: 3874)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-16 11:14:58 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 947)
+  Rendered layout layouts/application.html.erb (Duration: 54.4ms | Allocations: 3228)
+Completed 200 OK in 76ms (Views: 58.7ms | ActiveRecord: 0.0ms | Allocations: 3840)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-02-16 11:16:23 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [49 times] (Duration: 11.7ms | Allocations: 2644)
+  Rendered users/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 4957)
+  Rendered layout layouts/application.html.erb (Duration: 75.6ms | Allocations: 7417)
+Completed 200 OK in 99ms (Views: 78.7ms | ActiveRecord: 2.0ms | Allocations: 7710)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 11:24:11 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 15.2ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 58.6ms | Allocations: 4178)
+Completed 200 OK in 79ms (Views: 62.9ms | Allocations: 4735)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-02-16 11:24:58 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Haymanot", "bio"=>"A Police office from burie", "email"=>"hayme@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x0000026ff5b45b88 @tempfile=#<Tempfile:C:/Users/user/AppData/Local/Temp/RackMultipart20230216-12968-riurn7.jpg>, @original_filename="degisew photo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[photo]\"; filename=\"degisew photo.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :bio, :photo. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000026ff594d1a0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Haymanot", "bio"=>"A Police office from burie", "email"=>"hayme@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x0000026ff5b45b88 @tempfile=#<Tempfile:C:/Users/user/AppData/Local/Temp/RackMultipart20230216-12968-riurn7.jpg>, @original_filename="degisew photo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[photo]\"; filename=\"degisew photo.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (11.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hayme@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (16.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["name", nil], ["photo", nil], ["bio", nil], ["posts_counter", nil], ["created_at", "2023-02-16 08:24:59.821750"], ["updated_at", "2023-02-16 08:24:59.821750"], ["email", "hayme@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/users/199
+Completed 302 Found in 786ms (ActiveRecord: 74.9ms | Allocations: 10303)
+
+
+Started GET "/users/199" for 127.0.0.1 at 2023-02-16 11:24:59 +0300
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"199"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 4.2ms | Allocations: 1239)
+  Rendered users/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1492)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 1569)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 2.9ms | Allocations: 3261)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <div class="users-list">
+    2: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    3: <div class="username">
+    4: <h2><%=user.name%></h2>
+    5: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:2
+app/views/users/show.html.erb:1
+Started GET "/users/" for 127.0.0.1 at 2023-02-16 11:27:37 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 20.3ms | Allocations: 3875)
+  Rendered users/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 6214)
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 6291)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 2.3ms | Allocations: 6558)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <div class="users-list">
+    2: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    3: <div class="username">
+    4: <h2><%=user.name%></h2>
+    5: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:2
+app/views/users/index.html.erb:1
+Started GET "/users/" for 127.0.0.1 at 2023-02-16 11:32:41 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 5.3ms | Allocations: 619)
+  Rendered users/index.html.erb within layouts/application (Duration: 31.8ms | Allocations: 3225)
+  Rendered layout layouts/application.html.erb (Duration: 91.4ms | Allocations: 6169)
+Completed 200 OK in 166ms (Views: 135.3ms | ActiveRecord: 2.1ms | Allocations: 6993)
+
+
+Started GET "/users/" for 127.0.0.1 at 2023-02-16 11:33:47 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 14.8ms | Allocations: 4059)
+  Rendered users/index.html.erb within layouts/application (Duration: 42.3ms | Allocations: 6659)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 6742)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 2.4ms | Allocations: 7567)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <div class="users-list">
+    2: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    3: <div class="username">
+    4: <h2><%=user.name%></h2>
+    5: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:2
+app/views/users/index.html.erb:1
+Started GET "/users/" for 127.0.0.1 at 2023-02-16 11:42:31 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 20.5ms | Allocations: 3080)
+  Rendered users/index.html.erb within layouts/application (Duration: 319.3ms | Allocations: 8784)
+  Rendered layout layouts/application.html.erb (Duration: 364.9ms | Allocations: 11691)
+Completed 200 OK in 430ms (Views: 401.6ms | ActiveRecord: 48.2ms | Allocations: 12534)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-02-16 11:42:36 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 4.5ms | Allocations: 236)
+  [1m[36mPost Load (16.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 3.6ms | Allocations: 226)
+  Rendered users/show.html.erb within layouts/application (Duration: 735.1ms | Allocations: 14988)
+  Rendered layout layouts/application.html.erb (Duration: 780.0ms | Allocations: 17631)
+Completed 200 OK in 820ms (Views: 730.9ms | ActiveRecord: 59.2ms | Allocations: 18622)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-02-16 11:42:46 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.8ms | Allocations: 88)
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.4ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 16.1ms | Allocations: 1120)
+  Rendered layout layouts/application.html.erb (Duration: 58.3ms | Allocations: 3560)
+Completed 200 OK in 89ms (Views: 61.6ms | ActiveRecord: 3.3ms | Allocations: 4452)
+
+
+Started GET "/users/" for 127.0.0.1 at 2023-02-16 11:42:52 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 24.2ms | Allocations: 2839)
+  Rendered users/index.html.erb within layouts/application (Duration: 39.4ms | Allocations: 5172)
+  Rendered layout layouts/application.html.erb (Duration: 114.5ms | Allocations: 7631)
+Completed 200 OK in 150ms (Views: 127.9ms | ActiveRecord: 1.7ms | Allocations: 7924)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-02-16 11:42:53 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 36.6ms | Allocations: 2839)
+  Rendered users/index.html.erb within layouts/application (Duration: 52.4ms | Allocations: 5171)
+  Rendered layout layouts/application.html.erb (Duration: 94.4ms | Allocations: 7645)
+Completed 200 OK in 114ms (Views: 96.0ms | ActiveRecord: 2.0ms | Allocations: 7935)
+
+
+Started GET "/users/193" for 127.0.0.1 at 2023-02-16 11:42:58 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.7ms | Allocations: 73)
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 193], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 19)
+  Rendered users/show.html.erb within layouts/application (Duration: 14.4ms | Allocations: 1045)
+  Rendered layout layouts/application.html.erb (Duration: 53.3ms | Allocations: 3488)
+Completed 200 OK in 78ms (Views: 55.6ms | ActiveRecord: 3.3ms | Allocations: 4331)
+
+
+Started GET "/users/194" for 127.0.0.1 at 2023-02-16 11:43:16 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"194"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.7ms | Allocations: 73)
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 194], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1038)
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 3492)
+Completed 200 OK in 80ms (Views: 55.2ms | ActiveRecord: 3.3ms | Allocations: 4335)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 11:43:30 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 25ms (ActiveRecord: 1.7ms | Allocations: 1729)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 11:43:32 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 2.2ms | Allocations: 1564)
+
+
+Started GET "/users/181" for 127.0.0.1 at 2023-02-16 11:43:39 +0300
+Started GET "/users/181" for 127.0.0.1 at 2023-02-16 11:43:39 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"181"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.9ms | Allocations: 73)
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 181], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.1ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 25.3ms | Allocations: 1046)
+  Rendered layout layouts/application.html.erb (Duration: 96.7ms | Allocations: 3594)
+Completed 200 OK in 128ms (Views: 99.3ms | ActiveRecord: 3.2ms | Allocations: 4446)
+
+
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"181"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.7ms | Allocations: 73)
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 181], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.4ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 14.9ms | Allocations: 1040)
+  Rendered layout layouts/application.html.erb (Duration: 55.1ms | Allocations: 3518)
+Completed 200 OK in 84ms (Views: 58.8ms | ActiveRecord: 3.1ms | Allocations: 4361)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-02-16 11:43:46 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.7ms | Allocations: 74)
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 3], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.1ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 1041)
+  Rendered layout layouts/application.html.erb (Duration: 55.7ms | Allocations: 3523)
+Completed 200 OK in 81ms (Views: 58.3ms | ActiveRecord: 2.7ms | Allocations: 4366)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2023-02-16 13:04:45 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.7ms | Allocations: 74)
+  [1m[36mPost Load (6.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 4], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.1ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 25.3ms | Allocations: 1043)
+  Rendered layout layouts/application.html.erb (Duration: 70.4ms | Allocations: 3513)
+Completed 200 OK in 429ms (Views: 68.1ms | ActiveRecord: 52.4ms | Allocations: 7476)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-02-16 13:05:23 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 54.5ms | Allocations: 6506)
+  Rendered users/index.html.erb within layouts/application (Duration: 84.0ms | Allocations: 9111)
+  Rendered layout layouts/application.html.erb (Duration: 86.4ms | Allocations: 9194)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 1.9ms | Allocations: 9996)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users" for 127.0.0.1 at 2023-02-16 13:13:28 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 24.7ms | Allocations: 3071)
+  Rendered users/index.html.erb within layouts/application (Duration: 450.6ms | Allocations: 8775)
+  Rendered layout layouts/application.html.erb (Duration: 503.1ms | Allocations: 11692)
+Completed 200 OK in 582ms (Views: 551.9ms | ActiveRecord: 53.8ms | Allocations: 12536)
+
+
+Started GET "/users/" for 127.0.0.1 at 2023-02-16 13:13:36 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 35.9ms | Allocations: 2839)
+  Rendered users/index.html.erb within layouts/application (Duration: 52.6ms | Allocations: 5171)
+  Rendered layout layouts/application.html.erb (Duration: 100.5ms | Allocations: 7646)
+Completed 200 OK in 128ms (Views: 104.0ms | ActiveRecord: 2.3ms | Allocations: 7960)
+
+
+Started GET "/users/" for 127.0.0.1 at 2023-02-16 13:13:39 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 59.3ms | Allocations: 2839)
+  Rendered users/index.html.erb within layouts/application (Duration: 74.0ms | Allocations: 5171)
+  Rendered layout layouts/application.html.erb (Duration: 157.6ms | Allocations: 7646)
+Completed 200 OK in 195ms (Views: 176.2ms | ActiveRecord: 1.9ms | Allocations: 7936)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 13:13:46 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 21ms (ActiveRecord: 3.5ms | Allocations: 1729)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 13:13:46 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 14.8ms | Allocations: 2839)
+  Rendered users/index.html.erb within layouts/application (Duration: 31.4ms | Allocations: 5171)
+  Rendered layout layouts/application.html.erb (Duration: 83.1ms | Allocations: 7652)
+Completed 200 OK in 99ms (Views: 85.4ms | ActiveRecord: 2.1ms | Allocations: 7942)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 13:14:02 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 1.7ms | Allocations: 1584)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 13:14:02 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 16.1ms | Allocations: 2839)
+  Rendered users/index.html.erb within layouts/application (Duration: 31.8ms | Allocations: 5171)
+  Rendered layout layouts/application.html.erb (Duration: 75.0ms | Allocations: 7655)
+Completed 200 OK in 95ms (Views: 77.1ms | ActiveRecord: 2.1ms | Allocations: 7945)
+
+
+Started GET "/users/199" for 127.0.0.1 at 2023-02-16 13:14:26 +0300
+Started GET "/users/199" for 127.0.0.1 at 2023-02-16 13:14:26 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"199"}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 3.1ms | Allocations: 234)
+  [1m[36mPost Load (6.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 199], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 16)
+  Rendered users/show.html.erb within layouts/application (Duration: 41.7ms | Allocations: 1442)
+  Rendered layout layouts/application.html.erb (Duration: 94.1ms | Allocations: 4033)
+Completed 200 OK in 138ms (Views: 91.1ms | ActiveRecord: 12.4ms | Allocations: 4952)
+
+
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"199"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.8ms | Allocations: 72)
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 199], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1035)
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 3502)
+Completed 200 OK in 86ms (Views: 57.1ms | ActiveRecord: 3.1ms | Allocations: 4342)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 14:32:22 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (11.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (17.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 38.0ms | Allocations: 3267)
+  Rendered users/index.html.erb within layouts/application (Duration: 260.3ms | Allocations: 15465)
+  Rendered layout layouts/application.html.erb (Duration: 1185.6ms | Allocations: 52426)
+Completed 200 OK in 1522ms (Views: 1237.9ms | ActiveRecord: 66.2ms | Allocations: 55971)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 14:32:56 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 525.9ms | Allocations: 12783)
+  Rendered users/index.html.erb within layouts/application (Duration: 550.1ms | Allocations: 15413)
+  Rendered layout layouts/application.html.erb (Duration: 553.4ms | Allocations: 15497)
+Completed 500 Internal Server Error in 612ms (ActiveRecord: 2.1ms | Allocations: 16392)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users" for 127.0.0.1 at 2023-02-16 14:33:24 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 34.2ms | Allocations: 6300)
+  Rendered users/index.html.erb within layouts/application (Duration: 51.8ms | Allocations: 8709)
+  Rendered layout layouts/application.html.erb (Duration: 58.3ms | Allocations: 8787)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 2.6ms | Allocations: 9106)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users/1" for 127.0.0.1 at 2023-02-16 14:33:31 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 3.1ms | Allocations: 335)
+  [1m[36mPost Load (9.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 2.9ms | Allocations: 226)
+  Rendered users/show.html.erb within layouts/application (Duration: 185.8ms | Allocations: 9342)
+  Rendered layout layouts/application.html.erb (Duration: 250.8ms | Allocations: 12272)
+Completed 200 OK in 791ms (Views: 236.0ms | ActiveRecord: 22.8ms | Allocations: 20215)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 14:33:42 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 90ms (ActiveRecord: 1.8ms | Allocations: 3470)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 14:33:42 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 30.6ms | Allocations: 6288)
+  Rendered users/index.html.erb within layouts/application (Duration: 46.9ms | Allocations: 8630)
+  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 8709)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 1.9ms | Allocations: 9023)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 14:34:53 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 1.7ms | Allocations: 1549)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 14:34:54 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 29.6ms | Allocations: 6239)
+  Rendered users/index.html.erb within layouts/application (Duration: 46.8ms | Allocations: 8569)
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 8646)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 1.9ms | Allocations: 8912)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 14:35:12 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 417ms (ActiveRecord: 2.3ms | Allocations: 1574)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 14:35:17 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 306.9ms | Allocations: 3071)
+  Rendered users/index.html.erb within layouts/application (Duration: 680.4ms | Allocations: 5674)
+  Rendered layout layouts/application.html.erb (Duration: 1349.5ms | Allocations: 8611)
+Completed 200 OK in 2375ms (Views: 2297.4ms | ActiveRecord: 3.5ms | Allocations: 9443)
+
+
+Started GET "/users/sign_up?ref=hackernoon.com" for ::1 at 2023-02-16 14:36:28 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"ref"=>"hackernoon.com"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.4ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 6.1ms | Allocations: 588)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 652.8ms | Allocations: 11203)
+  Rendered layout layouts/application.html.erb (Duration: 692.1ms | Allocations: 13693)
+Completed 200 OK in 800ms (Views: 773.2ms | ActiveRecord: 0.0ms | Allocations: 14846)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-16 14:36:44 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 1927)
+  Rendered layout layouts/application.html.erb (Duration: 60.4ms | Allocations: 4231)
+Completed 200 OK in 80ms (Views: 65.5ms | ActiveRecord: 0.0ms | Allocations: 4895)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-02-16 14:37:09 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 1.6ms | Allocations: 1738)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 14:37:09 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 31.3ms | Allocations: 2847)
+  Rendered users/index.html.erb within layouts/application (Duration: 47.8ms | Allocations: 5187)
+  Rendered layout layouts/application.html.erb (Duration: 113.6ms | Allocations: 7659)
+Completed 200 OK in 136ms (Views: 115.4ms | ActiveRecord: 2.7ms | Allocations: 7952)
+
+
+Started GET "/" for ::1 at 2023-02-16 14:37:39 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 15.9ms | Allocations: 2839)
+  Rendered users/index.html.erb within layouts/application (Duration: 31.0ms | Allocations: 5181)
+  Rendered layout layouts/application.html.erb (Duration: 74.0ms | Allocations: 7648)
+Completed 200 OK in 93ms (Views: 75.5ms | ActiveRecord: 2.7ms | Allocations: 7948)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-16 14:37:46 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.9ms | Allocations: 1875)
+  Rendered layout layouts/application.html.erb (Duration: 58.1ms | Allocations: 4179)
+Completed 200 OK in 79ms (Views: 61.6ms | ActiveRecord: 0.0ms | Allocations: 4737)
+
+
+Started GET "/users" for ::1 at 2023-02-16 14:37:58 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 19.9ms | Allocations: 2839)
+  Rendered users/index.html.erb within layouts/application (Duration: 34.3ms | Allocations: 5171)
+  Rendered layout layouts/application.html.erb (Duration: 79.6ms | Allocations: 7631)
+Completed 200 OK in 96ms (Views: 81.7ms | ActiveRecord: 2.2ms | Allocations: 7921)
+
+
+Started GET "/users" for ::1 at 2023-02-16 14:38:18 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 52.0ms | Allocations: 6504)
+  Rendered users/index.html.erb within layouts/application (Duration: 82.1ms | Allocations: 9107)
+  Rendered layout layouts/application.html.erb (Duration: 87.4ms | Allocations: 9190)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 2.2ms | Allocations: 9992)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users" for ::1 at 2023-02-16 14:39:11 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 60.2ms | Allocations: 2502)
+  Rendered users/index.html.erb within layouts/application (Duration: 103.9ms | Allocations: 5103)
+  Rendered layout layouts/application.html.erb (Duration: 107.5ms | Allocations: 5186)
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 2.8ms | Allocations: 6007)
+
+
+  
+ActionView::Template::Error (The asset "Tom" is not present in the asset pipeline.
+):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.name), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users" for ::1 at 2023-02-16 14:39:55 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 58.6ms | Allocations: 6507)
+  Rendered users/index.html.erb within layouts/application (Duration: 101.8ms | Allocations: 9107)
+  Rendered layout layouts/application.html.erb (Duration: 105.1ms | Allocations: 9190)
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 2.6ms | Allocations: 10009)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users" for ::1 at 2023-02-16 14:45:33 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 154.4ms | Allocations: 8977)
+  Rendered users/index.html.erb within layouts/application (Duration: 571.9ms | Allocations: 14692)
+  Rendered layout layouts/application.html.erb (Duration: 665.7ms | Allocations: 17600)
+Completed 200 OK in 744ms (Views: 714.7ms | ActiveRecord: 55.4ms | Allocations: 18443)
+
+
+Started GET "/users" for ::1 at 2023-02-16 14:46:39 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 30.2ms | Allocations: 3192)
+  Rendered users/index.html.erb within layouts/application (Duration: 80.4ms | Allocations: 5794)
+  Rendered layout layouts/application.html.erb (Duration: 149.8ms | Allocations: 8685)
+Completed 200 OK in 246ms (Views: 212.1ms | ActiveRecord: 2.6ms | Allocations: 9538)
+
+
+Started GET "/users" for ::1 at 2023-02-16 14:47:25 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 36.8ms | Allocations: 6504)
+  Rendered users/index.html.erb within layouts/application (Duration: 59.7ms | Allocations: 9104)
+  Rendered layout layouts/application.html.erb (Duration: 62.6ms | Allocations: 9187)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 2.2ms | Allocations: 10012)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users" for ::1 at 2023-02-16 14:55:00 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 33.4ms | Allocations: 6327)
+  Rendered users/index.html.erb within layouts/application (Duration: 387.5ms | Allocations: 15492)
+  Rendered layout layouts/application.html.erb (Duration: 391.1ms | Allocations: 15575)
+Completed 500 Internal Server Error in 412ms (ActiveRecord: 47.4ms | Allocations: 16357)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/" for ::1 at 2023-02-16 14:55:23 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.2ms | Allocations: 286)
+Completed 200 OK in 40ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 1072)
+
+
+Started GET "/users" for ::1 at 2023-02-16 14:55:31 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 36.5ms | Allocations: 6504)
+  Rendered users/index.html.erb within layouts/application (Duration: 60.2ms | Allocations: 9104)
+  Rendered layout layouts/application.html.erb (Duration: 63.5ms | Allocations: 9187)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 2.0ms | Allocations: 10035)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users" for ::1 at 2023-02-16 14:56:18 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 51.2ms | Allocations: 6331)
+  Rendered users/index.html.erb within layouts/application (Duration: 150.2ms | Allocations: 13012)
+  Rendered layout layouts/application.html.erb (Duration: 153.7ms | Allocations: 13185)
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 51.8ms | Allocations: 13983)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <%= link_to user_path(user), class:'user-link' do %>
+    2: <div class="users-list">
+    3: <div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+    4: <div class="username">
+    5: <h2><%=user.name%></h2>
+    6: <p>Number of Posts:<%=user.posts_counter || 0 %></p>
+  
+app/views/shared/_user.html.erb:3
+app/views/shared/_user.html.erb:1
+app/views/users/index.html.erb:1
+Started GET "/users" for ::1 at 2023-02-16 15:00:17 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [50 times] (Duration: 54.7ms | Allocations: 5251)
+  Rendered users/index.html.erb within layouts/application (Duration: 88.8ms | Allocations: 7853)
+  Rendered layout layouts/application.html.erb (Duration: 537.8ms | Allocations: 22722)
+Completed 200 OK in 681ms (Views: 640.2ms | ActiveRecord: 2.5ms | Allocations: 23582)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-16 15:03:48 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.9ms | Allocations: 195)
+  Rendered devise/shared/_links.html.erb (Duration: 3.9ms | Allocations: 485)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 47.7ms | Allocations: 3276)
+  Rendered layout layouts/application.html.erb (Duration: 97.0ms | Allocations: 5760)
+Completed 200 OK in 186ms (Views: 165.3ms | ActiveRecord: 0.0ms | Allocations: 7126)
+
+
+Started POST "/users" for ::1 at 2023-02-16 15:04:45 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Bosena", "bio"=>"A student at BDU", "email"=>"bosena21@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00000204e0f123e0 @tempfile=#<Tempfile:C:/Users/user/AppData/Local/Temp/RackMultipart20230216-1096-lbtf80.jpg>, @original_filename="degisew photo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[photo]\"; filename=\"degisew photo.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :bio, :photo. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00000204e0f391e8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Bosena", "bio"=>"A student at BDU", "email"=>"bosena21@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00000204e0f123e0 @tempfile=#<Tempfile:C:/Users/user/AppData/Local/Temp/RackMultipart20230216-1096-lbtf80.jpg>, @original_filename="degisew photo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[photo]\"; filename=\"degisew photo.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bosena21@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (8.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["name", nil], ["photo", nil], ["bio", nil], ["posts_counter", nil], ["created_at", "2023-02-16 12:04:46.131448"], ["updated_at", "2023-02-16 12:04:46.131448"], ["email", "bosena21@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/200
+Completed 302 Found in 566ms (ActiveRecord: 18.4ms | Allocations: 9137)
+
+
+Started GET "/users/200" for ::1 at 2023-02-16 15:04:46 +0300
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"200"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 3.4ms | Allocations: 262)
+  [1m[36mPost Load (6.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 200], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 25)
+  Rendered users/show.html.erb within layouts/application (Duration: 62.2ms | Allocations: 4166)
+  Rendered layout layouts/application.html.erb (Duration: 107.2ms | Allocations: 6822)
+Completed 200 OK in 148ms (Views: 99.9ms | ActiveRecord: 14.5ms | Allocations: 8436)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-16 15:21:35 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (14.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 603ms (ActiveRecord: 120.6ms | Allocations: 4865)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:21:37 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 47.4ms | Allocations: 5307)
+  Rendered users/index.html.erb within layouts/application (Duration: 82.0ms | Allocations: 7938)
+  Rendered layout layouts/application.html.erb (Duration: 160.0ms | Allocations: 10846)
+Completed 200 OK in 250ms (Views: 213.4ms | ActiveRecord: 2.7ms | Allocations: 11700)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-16 15:21:45 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 2.9ms | Allocations: 1704)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:21:45 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 38.3ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 86.9ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 135.1ms | Allocations: 9930)
+Completed 200 OK in 156ms (Views: 139.1ms | ActiveRecord: 2.1ms | Allocations: 10240)
+
+
+Started GET "/users" for ::1 at 2023-02-16 15:22:11 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 34.9ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 50.8ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 101.8ms | Allocations: 9909)
+Completed 200 OK in 126ms (Views: 106.6ms | ActiveRecord: 2.0ms | Allocations: 10199)
+
+
+Started GET "/users/sign_up?ref=hackernoon.com" for ::1 at 2023-02-16 15:22:38 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"ref"=>"hackernoon.com"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 1.7ms | Allocations: 1585)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:22:38 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 34.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 50.8ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 100.4ms | Allocations: 10002)
+Completed 200 OK in 128ms (Views: 101.8ms | ActiveRecord: 3.7ms | Allocations: 10292)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:24:20 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 74.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 120.0ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 1686.6ms | Allocations: 13331)
+Completed 200 OK in 1724ms (Views: 1693.7ms | ActiveRecord: 4.0ms | Allocations: 13621)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:32:35 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 39.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 452.2ms | Allocations: 10490)
+  Rendered layout layouts/application.html.erb (Duration: 689.8ms | Allocations: 14575)
+Completed 200 OK in 712ms (Views: 694.2ms | ActiveRecord: 50.5ms | Allocations: 14863)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:35:28 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 55.0ms | Allocations: 5306)
+  Rendered users/index.html.erb within layouts/application (Duration: 163.9ms | Allocations: 7947)
+  Rendered layout layouts/application.html.erb (Duration: 471.5ms | Allocations: 12565)
+Completed 200 OK in 585ms (Views: 540.1ms | ActiveRecord: 4.7ms | Allocations: 13395)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:35:52 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 93.7ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 215.9ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 592.7ms | Allocations: 11465)
+Completed 200 OK in 652ms (Views: 618.7ms | ActiveRecord: 3.3ms | Allocations: 11778)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:36:51 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 58.4ms | Allocations: 5058)
+  Rendered users/index.html.erb within layouts/application (Duration: 87.7ms | Allocations: 7419)
+  Rendered layout layouts/application.html.erb (Duration: 630.3ms | Allocations: 11498)
+Completed 200 OK in 685ms (Views: 653.7ms | ActiveRecord: 2.3ms | Allocations: 11788)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:37:06 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 81.8ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 108.6ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 596.4ms | Allocations: 11497)
+Completed 200 OK in 643ms (Views: 613.8ms | ActiveRecord: 2.9ms | Allocations: 11787)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:39:19 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 119.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 173.1ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 649.8ms | Allocations: 11500)
+Completed 200 OK in 722ms (Views: 689.9ms | ActiveRecord: 2.7ms | Allocations: 11790)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:42:21 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 58.5ms | Allocations: 5326)
+  Rendered users/index.html.erb within layouts/application (Duration: 101.2ms | Allocations: 7960)
+  Rendered layout layouts/application.html.erb (Duration: 386.3ms | Allocations: 12591)
+Completed 200 OK in 511ms (Views: 456.5ms | ActiveRecord: 2.1ms | Allocations: 13421)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:45:06 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 46.8ms | Allocations: 5311)
+  Rendered users/index.html.erb within layouts/application (Duration: 88.3ms | Allocations: 7942)
+  Rendered layout layouts/application.html.erb (Duration: 157.3ms | Allocations: 10953)
+Completed 200 OK in 256ms (Views: 217.0ms | ActiveRecord: 2.3ms | Allocations: 11806)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:46:24 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 55.9ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 135.4ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 826.8ms | Allocations: 11583)
+Completed 200 OK in 859ms (Views: 834.4ms | ActiveRecord: 2.3ms | Allocations: 11896)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:48:08 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 52.9ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 69.7ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 188.6ms | Allocations: 9984)
+Completed 200 OK in 246ms (Views: 217.8ms | ActiveRecord: 2.4ms | Allocations: 10274)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:48:58 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 84.5ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 200.8ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 560.7ms | Allocations: 11524)
+Completed 200 OK in 616ms (Views: 587.3ms | ActiveRecord: 3.1ms | Allocations: 11814)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:49:16 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 46.9ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 64.2ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 261.4ms | Allocations: 11512)
+Completed 200 OK in 313ms (Views: 264.3ms | ActiveRecord: 2.4ms | Allocations: 11802)
+
+
+Started GET "/users/49" for ::1 at 2023-02-16 15:49:26 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 3.5ms | Allocations: 288)
+  [1m[36mPost Load (14.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 49], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 3.2ms | Allocations: 185)
+  Rendered users/show.html.erb within layouts/application (Duration: 123.1ms | Allocations: 3445)
+  Rendered layout layouts/application.html.erb (Duration: 167.9ms | Allocations: 5923)
+Completed 200 OK in 209ms (Views: 102.6ms | ActiveRecord: 73.2ms | Allocations: 6878)
+
+
+Started GET "/users/49" for ::1 at 2023-02-16 15:50:09 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.2ms | Allocations: 118)
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 49], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 1.0ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 45.4ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 330.5ms | Allocations: 5214)
+Completed 200 OK in 380ms (Views: 344.2ms | ActiveRecord: 4.2ms | Allocations: 6055)
+
+
+Started GET "/users/49" for ::1 at 2023-02-16 15:51:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 6.0ms | Allocations: 368)
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 49], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 4.9ms | Allocations: 179)
+  Rendered users/show.html.erb within layouts/application (Duration: 59.2ms | Allocations: 1993)
+  Rendered layout layouts/application.html.erb (Duration: 129.9ms | Allocations: 4904)
+Completed 200 OK in 247ms (Views: 198.5ms | ActiveRecord: 3.5ms | Allocations: 6285)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:51:15 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 51.1ms | Allocations: 5228)
+  Rendered users/index.html.erb within layouts/application (Duration: 71.5ms | Allocations: 7691)
+  Rendered layout layouts/application.html.erb (Duration: 137.5ms | Allocations: 10148)
+Completed 200 OK in 187ms (Views: 141.9ms | ActiveRecord: 2.1ms | Allocations: 10513)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:51:20 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 40.6ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 55.6ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 162.6ms | Allocations: 9914)
+Completed 200 OK in 188ms (Views: 164.9ms | ActiveRecord: 2.3ms | Allocations: 10204)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:52:15 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 57.6ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 77.5ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 424.1ms | Allocations: 11605)
+Completed 200 OK in 463ms (Views: 427.8ms | ActiveRecord: 3.2ms | Allocations: 11895)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:52:36 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 51.2ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 73.4ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 405.6ms | Allocations: 11497)
+Completed 200 OK in 433ms (Views: 410.8ms | ActiveRecord: 2.3ms | Allocations: 11787)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:55:16 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 34.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 48.9ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 234.7ms | Allocations: 11540)
+Completed 200 OK in 254ms (Views: 237.3ms | ActiveRecord: 1.8ms | Allocations: 11830)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:56:06 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 62.9ms | Allocations: 5070)
+  Rendered users/index.html.erb within layouts/application (Duration: 84.7ms | Allocations: 7431)
+  Rendered layout layouts/application.html.erb (Duration: 380.4ms | Allocations: 11526)
+Completed 200 OK in 417ms (Views: 381.8ms | ActiveRecord: 3.6ms | Allocations: 11816)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:56:53 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 45.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 63.4ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 279.4ms | Allocations: 11513)
+Completed 200 OK in 312ms (Views: 284.6ms | ActiveRecord: 2.3ms | Allocations: 11803)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:57:24 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 65.6ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 151.0ms | Allocations: 7419)
+  Rendered layout layouts/application.html.erb (Duration: 460.0ms | Allocations: 11508)
+Completed 200 OK in 506ms (Views: 469.3ms | ActiveRecord: 2.2ms | Allocations: 11798)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:58:04 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 52.8ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 82.5ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 289.3ms | Allocations: 11492)
+Completed 200 OK in 337ms (Views: 289.3ms | ActiveRecord: 6.5ms | Allocations: 11782)
+
+
+Started GET "/" for ::1 at 2023-02-16 15:59:00 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 88.1ms | Allocations: 5058)
+  Rendered users/index.html.erb within layouts/application (Duration: 116.4ms | Allocations: 7419)
+  Rendered layout layouts/application.html.erb (Duration: 445.8ms | Allocations: 11519)
+Completed 200 OK in 486ms (Views: 453.3ms | ActiveRecord: 3.7ms | Allocations: 11809)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:00:28 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 53.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 68.2ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 296.6ms | Allocations: 11509)
+Completed 200 OK in 324ms (Views: 298.9ms | ActiveRecord: 1.9ms | Allocations: 11799)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:01:17 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 48.4ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 63.1ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 260.1ms | Allocations: 11529)
+Completed 200 OK in 293ms (Views: 266.6ms | ActiveRecord: 1.8ms | Allocations: 11819)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:01:34 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 32.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 48.3ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 225.9ms | Allocations: 11519)
+Completed 200 OK in 243ms (Views: 228.0ms | ActiveRecord: 2.2ms | Allocations: 11809)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:01:52 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 36.9ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 51.2ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 230.5ms | Allocations: 11499)
+Completed 200 OK in 250ms (Views: 232.1ms | ActiveRecord: 2.0ms | Allocations: 11789)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:03:45 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 40.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 56.1ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 343.1ms | Allocations: 11516)
+Completed 200 OK in 370ms (Views: 346.5ms | ActiveRecord: 2.1ms | Allocations: 11806)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:04:08 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 40.0ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 53.9ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 239.9ms | Allocations: 11506)
+Completed 200 OK in 278ms (Views: 245.8ms | ActiveRecord: 2.0ms | Allocations: 11797)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:04:45 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 49.1ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 75.8ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 329.1ms | Allocations: 11536)
+Completed 200 OK in 366ms (Views: 338.4ms | ActiveRecord: 2.1ms | Allocations: 11826)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:05:05 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 30.7ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 46.1ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 253.7ms | Allocations: 11517)
+Completed 200 OK in 277ms (Views: 256.2ms | ActiveRecord: 1.9ms | Allocations: 11807)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:05:29 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 45.6ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 63.1ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 284.7ms | Allocations: 11492)
+Completed 200 OK in 311ms (Views: 286.2ms | ActiveRecord: 2.3ms | Allocations: 11782)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:06:44 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 59.7ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 88.6ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 343.3ms | Allocations: 11541)
+Completed 200 OK in 376ms (Views: 355.6ms | ActiveRecord: 2.1ms | Allocations: 11832)
+
+
+Started GET "/users/11" for ::1 at 2023-02-16 16:06:56 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.9ms | Allocations: 117)
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 11], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 16)
+  Rendered users/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 1085)
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 3580)
+Completed 200 OK in 80ms (Views: 56.5ms | ActiveRecord: 3.4ms | Allocations: 4436)
+
+
+Started GET "/users/174" for ::1 at 2023-02-16 16:07:08 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"174"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 174], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.0ms | Allocations: 117)
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 174], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.2ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 23.7ms | Allocations: 1086)
+  Rendered layout layouts/application.html.erb (Duration: 134.2ms | Allocations: 3552)
+Completed 200 OK in 165ms (Views: 137.0ms | ActiveRecord: 3.3ms | Allocations: 4395)
+
+
+Started GET "/users/181" for ::1 at 2023-02-16 16:07:14 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"181"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.4ms | Allocations: 117)
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 181], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [0 times] (Duration: 0.1ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1083)
+  Rendered layout layouts/application.html.erb (Duration: 56.9ms | Allocations: 3570)
+Completed 200 OK in 82ms (Views: 59.6ms | ActiveRecord: 3.3ms | Allocations: 4413)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:07:22 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.3ms | Allocations: 119)
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.3ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 16.0ms | Allocations: 1141)
+  Rendered layout layouts/application.html.erb (Duration: 57.3ms | Allocations: 3601)
+Completed 200 OK in 86ms (Views: 60.2ms | ActiveRecord: 3.0ms | Allocations: 4444)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:09:15 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.9ms | Allocations: 119)
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.7ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 19.3ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 218.5ms | Allocations: 5255)
+Completed 200 OK in 255ms (Views: 222.7ms | ActiveRecord: 2.5ms | Allocations: 6096)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:09:35 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.9ms | Allocations: 119)
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.4ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 25.7ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 262.4ms | Allocations: 5215)
+Completed 200 OK in 292ms (Views: 266.6ms | ActiveRecord: 3.8ms | Allocations: 6056)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:10:26 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.1ms | Allocations: 119)
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.5ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 19.5ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 299.5ms | Allocations: 5236)
+Completed 200 OK in 341ms (Views: 301.6ms | ActiveRecord: 3.3ms | Allocations: 6077)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:10:44 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.1ms | Allocations: 119)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.4ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 17.7ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 218.2ms | Allocations: 5226)
+Completed 200 OK in 250ms (Views: 221.1ms | ActiveRecord: 2.5ms | Allocations: 6067)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:11:17 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.1ms | Allocations: 119)
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.4ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 19.8ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 241.6ms | Allocations: 5227)
+Completed 200 OK in 285ms (Views: 247.4ms | ActiveRecord: 3.0ms | Allocations: 6068)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:11:41 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.1ms | Allocations: 119)
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.5ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 199.6ms | Allocations: 5233)
+Completed 200 OK in 226ms (Views: 203.3ms | ActiveRecord: 2.5ms | Allocations: 6074)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:11:46 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.9ms | Allocations: 119)
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.8ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 18.1ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 64.0ms | Allocations: 3639)
+Completed 200 OK in 92ms (Views: 69.5ms | ActiveRecord: 2.5ms | Allocations: 4480)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:11:55 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.2ms | Allocations: 119)
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.6ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 18.6ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 247.9ms | Allocations: 5226)
+Completed 200 OK in 287ms (Views: 251.7ms | ActiveRecord: 2.8ms | Allocations: 6067)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:12:18 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.0ms | Allocations: 119)
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.3ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 208.9ms | Allocations: 5258)
+Completed 200 OK in 241ms (Views: 210.6ms | ActiveRecord: 4.8ms | Allocations: 6099)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:12:42 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.1ms | Allocations: 119)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.6ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 33.6ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 275.7ms | Allocations: 5237)
+Completed 200 OK in 332ms (Views: 279.1ms | ActiveRecord: 2.6ms | Allocations: 6078)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:12:59 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.3ms | Allocations: 119)
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.3ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 19.0ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 238.2ms | Allocations: 5221)
+Completed 200 OK in 274ms (Views: 239.7ms | ActiveRecord: 4.1ms | Allocations: 6062)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:13:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.2ms | Allocations: 119)
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.4ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 19.2ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 132.0ms | Allocations: 3717)
+Completed 200 OK in 179ms (Views: 141.9ms | ActiveRecord: 3.3ms | Allocations: 4558)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:14:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.9ms | Allocations: 119)
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.3ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 18.0ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 246.9ms | Allocations: 5232)
+Completed 200 OK in 287ms (Views: 248.3ms | ActiveRecord: 3.9ms | Allocations: 6073)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:14:44 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.2ms | Allocations: 119)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.3ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 253.6ms | Allocations: 5248)
+Completed 200 OK in 295ms (Views: 258.0ms | ActiveRecord: 2.7ms | Allocations: 6089)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:14:56 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 3.4ms | Allocations: 119)
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.5ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 42.3ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 298.7ms | Allocations: 5267)
+Completed 200 OK in 387ms (Views: 312.6ms | ActiveRecord: 3.2ms | Allocations: 6108)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:15:22 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.0ms | Allocations: 119)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.6ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 23.5ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 235.7ms | Allocations: 5223)
+Completed 200 OK in 266ms (Views: 237.8ms | ActiveRecord: 2.5ms | Allocations: 6064)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:15:36 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.9ms | Allocations: 119)
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.3ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 15.5ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 197.8ms | Allocations: 5203)
+Completed 200 OK in 224ms (Views: 200.6ms | ActiveRecord: 2.8ms | Allocations: 6044)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:16:06 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.1ms | Allocations: 119)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.6ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 20.1ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 212.5ms | Allocations: 5222)
+Completed 200 OK in 247ms (Views: 217.2ms | ActiveRecord: 2.5ms | Allocations: 6063)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:16:17 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.9ms | Allocations: 119)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.4ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 196.1ms | Allocations: 5237)
+Completed 200 OK in 225ms (Views: 199.5ms | ActiveRecord: 2.4ms | Allocations: 6078)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:16:46 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.6ms | Allocations: 119)
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.4ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 22.1ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 247.1ms | Allocations: 5233)
+Completed 200 OK in 282ms (Views: 250.1ms | ActiveRecord: 2.9ms | Allocations: 6074)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:17:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 5.5ms | Allocations: 119)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.4ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 79.0ms | Allocations: 1141)
+  Rendered layout layouts/application.html.erb (Duration: 319.5ms | Allocations: 5226)
+Completed 200 OK in 390ms (Views: 328.6ms | ActiveRecord: 2.8ms | Allocations: 6067)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:17:22 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.0ms | Allocations: 119)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.3ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 17.3ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 210.1ms | Allocations: 5236)
+Completed 200 OK in 237ms (Views: 213.3ms | ActiveRecord: 2.2ms | Allocations: 6077)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:19:03 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 3.8ms | Allocations: 368)
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 2.7ms | Allocations: 179)
+  Rendered users/show.html.erb within layouts/application (Duration: 57.7ms | Allocations: 1999)
+  Rendered layout layouts/application.html.erb (Duration: 159.3ms | Allocations: 5030)
+Completed 200 OK in 270ms (Views: 217.3ms | ActiveRecord: 2.7ms | Allocations: 6411)
+
+
+Started GET "/users/6" for ::1 at 2023-02-16 16:19:21 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.1ms | Allocations: 119)
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 6], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [3 times] (Duration: 0.5ms | Allocations: 62)
+  Rendered users/show.html.erb within layouts/application (Duration: 17.9ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 77.3ms | Allocations: 3718)
+Completed 200 OK in 104ms (Views: 79.4ms | ActiveRecord: 3.3ms | Allocations: 4594)
+
+
+Started GET "/users/6" for ::1 at 2023-02-16 16:20:03 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.0ms | Allocations: 119)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 6], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [3 times] (Duration: 0.6ms | Allocations: 62)
+  Rendered users/show.html.erb within layouts/application (Duration: 18.8ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 243.1ms | Allocations: 5392)
+Completed 200 OK in 281ms (Views: 246.4ms | ActiveRecord: 2.5ms | Allocations: 6233)
+
+
+Started GET "/users/6" for ::1 at 2023-02-16 16:20:22 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.1ms | Allocations: 119)
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 6], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [3 times] (Duration: 0.5ms | Allocations: 62)
+  Rendered users/show.html.erb within layouts/application (Duration: 15.9ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 237.6ms | Allocations: 5335)
+Completed 200 OK in 277ms (Views: 243.5ms | ActiveRecord: 2.5ms | Allocations: 6176)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:21:01 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 0.9ms | Allocations: 119)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.4ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 15.5ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 63.8ms | Allocations: 3626)
+Completed 200 OK in 96ms (Views: 68.6ms | ActiveRecord: 2.5ms | Allocations: 4467)
+
+
+Started GET "/users/1" for ::1 at 2023-02-16 16:21:51 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 1.1ms | Allocations: 119)
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.3ms | Allocations: 29)
+  Rendered users/show.html.erb within layouts/application (Duration: 15.9ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 193.0ms | Allocations: 5239)
+Completed 200 OK in 229ms (Views: 196.6ms | ActiveRecord: 2.7ms | Allocations: 6080)
+
+
+Started GET "/users/1/posts" for ::1 at 2023-02-16 16:22:05 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_user.html.erb (Duration: 2.0ms | Allocations: 206)
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  Rendered collection of shared/_post.html.erb [1 times] (Duration: 0.5ms | Allocations: 38)
+  [1m[36mComment Load (14.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 5], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of shared/_comment.html.erb [0 times] (Duration: 0.4ms | Allocations: 22)
+  Rendered posts/index.html.erb within layouts/application (Duration: 117.8ms | Allocations: 5324)
+  Rendered layout layouts/application.html.erb (Duration: 163.8ms | Allocations: 7790)
+Completed 200 OK in 231ms (Views: 140.6ms | ActiveRecord: 57.3ms | Allocations: 9303)
+
+
+Started GET "/users/6/posts/78" for ::1 at 2023-02-16 16:22:40 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"6", "id"=>"78"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["author_id", 6], ["id", 78], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+Completed 404 Not Found in 44ms (ActiveRecord: 3.6ms | Allocations: 1846)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=78 [WHERE "posts"."author_id" = $1]):
+  
+app/controllers/posts_controller.rb:14:in `show'
+Started GET "/users/6/posts/1" for ::1 at 2023-02-16 16:22:45 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"6", "id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["author_id", 6], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered shared/_post.html.erb (Duration: 2.4ms | Allocations: 168)
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_comment.html.erb:2
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_comment.html.erb:2
+  Rendered collection of shared/_comment.html.erb [2 times] (Duration: 24.9ms | Allocations: 3264)
+  Rendered posts/show.html.erb within layouts/application (Duration: 668.1ms | Allocations: 13559)
+  Rendered layout layouts/application.html.erb (Duration: 718.4ms | Allocations: 16255)
+Completed 200 OK in 767ms (Views: 713.8ms | ActiveRecord: 11.5ms | Allocations: 17886)
+
+
+Started GET "/users" for ::1 at 2023-02-16 16:23:32 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 32.3ms | Allocations: 5248)
+  Rendered users/index.html.erb within layouts/application (Duration: 51.7ms | Allocations: 7716)
+  Rendered layout layouts/application.html.erb (Duration: 98.6ms | Allocations: 10196)
+Completed 200 OK in 124ms (Views: 100.7ms | ActiveRecord: 2.3ms | Allocations: 10595)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-16 16:23:38 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 1.8ms | Allocations: 1657)
+
+
+Started GET "/" for ::1 at 2023-02-16 16:23:38 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 131.4ms | Allocations: 5057)
+  Rendered users/index.html.erb within layouts/application (Duration: 149.2ms | Allocations: 7418)
+  Rendered layout layouts/application.html.erb (Duration: 202.7ms | Allocations: 9904)
+Completed 200 OK in 222ms (Views: 204.7ms | ActiveRecord: 1.9ms | Allocations: 10194)
+
+

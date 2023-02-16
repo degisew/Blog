@@ -1,4 +1,4 @@
 <%=render partial:'shared/user', locals: {user: @user}%>
 
-<div><%=@user.bio%></div>
+<div class="bio"><%=@user.bio%></div>
 <%=render partial: 'shared/post', collection: @user.recent_posts%>

@@ -1,7 +1,9 @@
-<div class="users-list">
-<div><%= image_tag (user.photo), alt: 'avatar', class:'user-img'%></div>
+<%= link_to user_path(user), class:'user-link' do %>
+<div class='container'>
+<div><%= image_tag (user.photo), alt: 'avatar', class:'user-img' if user.photo%></div>
 <div class="username">
 <h2><%=user.name%></h2>
-<p>Number of Posts:<%=user.posts_counter || 0 %></p>
+<p class="number-of-post">Number of Posts:<%=user.posts_counter || 0 %></p>
 </div>
 </div>
+<%end%>
