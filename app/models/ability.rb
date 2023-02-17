@@ -5,10 +5,14 @@ class Ability
     # Handle the case where we don't have a current_user i.e. the user is a guest
     user ||= User.new
 
-    return unless user.is? :admin
-
-    can :destroy, Post
-    can :destroy, Comment
+    if user.is? :admin
+      can :manage, :all
+    else
+      can :manage, Post, author_id: user.id
+      can :manage, Comment, author_id: user.id
+      can :manage, Like, author_id: user.id
+      can :read, :all
+    end
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
