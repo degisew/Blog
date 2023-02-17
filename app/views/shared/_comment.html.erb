@@ -1,3 +1,6 @@
 <div class='comment'>
   <p><strong><%=comment.author.name%> </strong> : <span><%=comment.text%></span></p>
+  <%if can? :destroy, Comment%>
+    <%= button_to "Delete Comment", "/users/#{comment.author.id}/posts/#{comment.post.id}/comments/#{comment.id}", method: :delete, class: 'btn-comment button'%>
+  <%end%>
 </div>

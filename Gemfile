@@ -12,6 +12,9 @@ gem 'sprockets-rails'
 # Use Devise for user authentication
 gem 'devise'
 
+# Use cancancan for user authorization
+gem 'cancancan'
+
 # Use postgres as the database for Active Record
 gem 'pg'
 
@@ -55,6 +58,7 @@ group :development, :test do
   gem 'rspec-rails'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rubocop'
 end
 
 group :development do

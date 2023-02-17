@@ -1,5 +1,5 @@
 <%=render partial:'shared/user', locals: {user: @current_user}%>
-<%=render partial: 'shared/post', collection: @posts%>
+<%=render partial: 'shared/post', collection: @posts, locals: {user: @current_user}%>
 <hr>
 <%@posts.each do |comment|%>
 <h4>Users comment on this post</h4>
