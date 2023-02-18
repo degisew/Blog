@@ -10799,3 +10799,91 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 84ms (Views: 65.6ms | ActiveRecord: 0.0ms | Allocations: 3959)
 
 
+Started GET "/" for ::1 at 2023-02-18 17:12:39 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (10.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (19.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered collection of shared/_user.html.erb [51 times] (Duration: 29.8ms | Allocations: 5527)
+  Rendered users/index.html.erb within layouts/application (Duration: 180.4ms | Allocations: 18332)
+  Rendered layout layouts/application.html.erb (Duration: 2135.3ms | Allocations: 59884)
+Completed 200 OK in 2339ms (Views: 2163.4ms | ActiveRecord: 49.8ms | Allocations: 63429)
+
+
+Started GET "/api-docs" for ::1 at 2023-02-18 17:16:55 +0300
+Started GET "/api-docs/index.html" for ::1 at 2023-02-18 17:16:56 +0300
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2023-02-18 17:16:57 +0300
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2023-02-18 17:16:58 +0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2023-02-18 17:16:58 +0300
+Started GET "/api-docs/v1/swagger.yaml" for ::1 at 2023-02-18 17:17:02 +0300
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2023-02-18 17:17:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api-docs/v1/swagger.yaml"):
+  
+Started GET "/api-docs/index.html" for ::1 at 2023-02-18 17:33:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api-docs/index.html"):
+  
+Started GET "/api-docs/index.html" for ::1 at 2023-02-18 18:09:06 +0300
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2023-02-18 18:09:29 +0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2023-02-18 18:09:30 +0300
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2023-02-18 18:09:30 +0300
+Started GET "/api-docs/v1/swagger.yaml" for ::1 at 2023-02-18 18:09:34 +0300
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2023-02-18 18:09:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api-docs/v1/swagger.yaml"):
+  
+Started GET "/api-docs/index.html" for ::1 at 2023-02-18 18:32:03 +0300
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2023-02-18 18:32:04 +0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2023-02-18 18:32:05 +0300
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2023-02-18 18:32:05 +0300
+Started GET "/api-docs/v1/swagger.yaml" for ::1 at 2023-02-18 18:32:09 +0300
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2023-02-18 18:32:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api-docs/v1/swagger.yaml"):
+  
+Started GET "/api-docs/index.html" for ::1 at 2023-02-18 19:19:13 +0300
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2023-02-18 19:19:14 +0300
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2023-02-18 19:19:14 +0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2023-02-18 19:19:15 +0300
+Started GET "/api-docs/v1/swagger.yaml" for ::1 at 2023-02-18 19:19:18 +0300
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2023-02-18 19:19:19 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api-docs/v1/swagger.yaml"):
+  
+Started GET "/swagger/index.html" for ::1 at 2023-02-18 19:27:13 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/swagger/index.html"):
+  
+Started GET "/api-docs" for ::1 at 2023-02-18 19:27:38 +0300
+Started GET "/api-docs/index.html" for ::1 at 2023-02-18 19:27:39 +0300
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2023-02-18 19:27:40 +0300
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2023-02-18 19:27:40 +0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2023-02-18 19:27:41 +0300
+Started GET "/api-docs/v1/swagger.yaml" for ::1 at 2023-02-18 19:27:43 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api-docs/v1/swagger.yaml"):
+  
+Started GET "/api-docs/index.html" for ::1 at 2023-02-18 19:45:29 +0300
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2023-02-18 19:45:31 +0300
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2023-02-18 19:45:31 +0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2023-02-18 19:45:32 +0300
+Started GET "/api-docs/v1/swagger.yaml" for ::1 at 2023-02-18 19:45:37 +0300
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2023-02-18 19:45:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api-docs/v1/swagger.yaml"):
+  
+Started GET "/swagger/index.html" for ::1 at 2023-02-18 19:48:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/swagger/index.html"):
+  
+Started GET "/api-docs/index.html" for ::1 at 2023-02-18 19:49:05 +0300
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2023-02-18 19:49:06 +0300
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2023-02-18 19:49:07 +0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2023-02-18 19:49:07 +0300
+Started GET "/api-docs/v1/swagger.yaml" for ::1 at 2023-02-18 19:49:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api-docs/v1/swagger.yaml"):
+  

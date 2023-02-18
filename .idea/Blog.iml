@@ -63,6 +63,7 @@
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.6.2, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.5, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v2.6.3, ruby-3.1.3-p185) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json-schema (v3.0.0, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.19.1, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.2, ruby-3.1.3-p185) [gem]" level="application" />
@@ -101,6 +102,9 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.12.3, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v6.0.1, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.12.0, ruby-3.1.3-p185) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rswag-api (v2.8.0, ruby-3.1.3-p185) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rswag-specs (v2.8.0, ruby-3.1.3-p185) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rswag-ui (v2.8.0, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.42.0, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.24.1, ruby-3.1.3-p185) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.11.0, ruby-3.1.3-p185) [gem]" level="application" />
