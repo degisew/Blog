@@ -6,6 +6,10 @@ ruby '3.1.3'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
 
+# use rswag to auto generate api-docs
+gem 'rswag-api'
+gem 'rswag-ui'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -56,6 +60,7 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'rswag-specs'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop'
